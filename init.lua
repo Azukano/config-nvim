@@ -558,3 +558,5 @@ local function setup_dynamic_statusline()
 end
 
 setup_dynamic_statusline()
+
+-- end of config
