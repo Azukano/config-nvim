@@ -1,4 +1,4 @@
--- ================================================================================================
+-- =================================================================================================
 -- Responsive Gliding NVIM
 -- author: Az
 -- ================================================================================================
@@ -24,7 +24,7 @@ vim.opt.ignorecase = true                          -- Case insensitive search
 vim.opt.smartcase = true                           -- Case sensitive if uppercase in search
 vim.opt.hlsearch = false                           -- Don't highlight search results 
 vim.opt.incsearch = true                           -- Show matches as you type
-
+    
 -- Visual settings
 vim.opt.termguicolors = true                       -- Enable 24-bit colors
 vim.opt.signcolumn = "yes"                         -- Always show sign column
@@ -108,14 +108,14 @@ vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Buffer navigation
---vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
---vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
 -- Better window navigation
---vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
---vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
---vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
---vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- Splitting & Resizing
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
