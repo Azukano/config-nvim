@@ -32,7 +32,11 @@ vim.opt.colorcolumn = "100"                        -- Show column at 100 charact
 vim.opt.showmatch = true                           -- Highlight matching brackets
 vim.opt.matchtime = 2                              -- How long to show matching bracket
 vim.opt.cmdheight = 1                              -- Command line height
-vim.opt.completeopt = "menuone,noinsert,noselect"  -- Completion options 
+-- vim.opt.completeopt = "menuone,noinsert,noselect"  -- Completion options  
+vim.opt.completeopt = 
+    {
+        'menu', 'menuone', 'noselect'              -- Completion options
+    }
 vim.opt.showmode = false                           -- Don't show mode in command line 
 vim.opt.pumheight = 10                             -- Popup menu height 
 vim.opt.pumblend = 10                              -- Popup menu transparency 
@@ -558,5 +562,19 @@ local function setup_dynamic_statusline()
 end
 
 setup_dynamic_statusline()
+-- end of vim basic setup
+
+-- start of elixir setup
+vim.lsp.config('expert', {
+  cmd = { 'expert', '--stdio' },
+  root_markers = { 'mix.exs', '.git' },
+  filetypes = { 'elixir', 'eelixir', 'heex' },
+})
+
+vim.lsp.enable 'expert'
+
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
 
 -- end of config
+
