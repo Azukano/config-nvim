@@ -571,7 +571,14 @@ vim.lsp.config('expert', {
   filetypes = { 'elixir', 'eelixir', 'heex' },
 })
 
+-- Treesitter highlight connfig
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'elixir', 'heex', 'html', 'javascript' },
+  callback = function() vim.treesitter.start() end,
+})
+
 vim.lsp.enable 'expert'
+--vim.opt.rocks.hererocks = false
 
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
